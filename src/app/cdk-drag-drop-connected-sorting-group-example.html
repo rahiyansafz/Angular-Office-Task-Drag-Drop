@@ -1,0 +1,114 @@
+<div cdkDropListGroup>
+	<div class="example-container">
+		<h4>Programming Lang</h4>
+
+		<div cdkDropList [cdkDropListData]="catagoryOne" class="example-list" (cdkDropListDropped)="drop($event)">
+			<div class="example-box" *ngFor="let item of catagoryOne" cdkDrag>
+				{{item}}
+			</div>
+		</div>
+	</div>
+
+	<div class="example-container">
+		<h4>Web FrameWorks</h4>
+
+		<div cdkDropList [cdkDropListData]="catagoryTwo" class="example-list" (cdkDropListDropped)="drop($event)">
+			<div class="example-box" *ngFor="let item of catagoryTwo" cdkDrag>
+				{{item}}
+			</div>
+		</div>
+	</div>
+
+	<!-- <div class="example-container">
+		<h4>Sports</h4>
+
+		<div cdkDropList [cdkDropListData]="catagoryThree" class="example-list" (cdkDropListDropped)="drop($event)">
+			<div class="example-box" *ngFor="let item of catagoryThree" cdkDrag>
+				{{item}}
+			</div>
+		</div>
+	</div> -->
+
+	<div class="example-container">
+		<h4>Platforms</h4>
+
+		<div cdkDropList [cdkDropListData]="catagoryFour" class="example-list" (cdkDropListDropped)="drop($event)">
+			<div class="example-box" *ngFor="let item of catagoryFour" cdkDrag>
+				{{item}}
+			</div>
+		</div>
+	</div>
+
+	<div class="example-container">
+		<h4>Algorithms</h4>
+
+		<div cdkDropList [cdkDropListData]="catagoryFive" class="example-list" (cdkDropListDropped)="drop($event)">
+			<div class="example-box" *ngFor="let item of catagoryFive" cdkDrag>
+				{{item}}
+			</div>
+		</div>
+	</div>
+
+	<div class="example-container">
+		<h4>Database</h4>
+
+		<div cdkDropList [cdkDropListData]="catagorySix" class="example-list" (cdkDropListDropped)="drop($event)">
+			<div class="example-box" *ngFor="let item of catagorySix" cdkDrag>
+				{{item}}
+			</div>
+		</div>
+	</div>
+
+	<div class="example-container">
+		<h4>Hated Things</h4>
+
+		<div cdkDropList [cdkDropListData]="catagorySeven" class="example-list" (cdkDropListDropped)="drop($event)">
+			<div class="example-box" *ngFor="let item of catagorySeven" cdkDrag>
+				{{item}}
+			</div>
+		</div>
+	</div>
+
+	<div class="new">
+		<div>
+			<input
+        #pushed
+        type="text"
+        (keyup.enter)="newItem(pushed.value); pushed.value = ''"
+      />
+
+			<button (click)="newItem(pushed.value); pushed.value = ''">
+        Add new item
+      </button>
+			<div cdkDropList [cdkDropListData]="catagoryNew" class="example-lists" (cdkDropListDropped)="drop($event)">
+				<div class="example-boxNew" *ngFor="let item of catagoryNew" cdkDrag>
+					{{item}}
+				</div>
+			</div>
+		</div>
+
+		<div class="example-container">
+			<h4>Drag to delete</h4>
+
+			<div cdkDropList [cdkDropListData]="deleteItem" class="example-list" (cdkDropListDropped)="drop($event)">
+				<div class="example-box" *ngFor="let item of deleteItem" cdkDrag>
+					{{item}}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- https://stackoverflow.com/questions/60182400/angular-material-drag-n-drop-cdk-remove-element-on-list -->
+
+<!-- https://stackblitz.com/edit/angular-cdk-nested-drag-drop-tree-structure?file=src%2Fdata.ts -->
+
+<!--  https://stackoverflow.com/questions/59153753/angular-8-nested-drag-and-drop -->
+
+
+
+<!-- https://stackblitz.com/edit/angular-inline-edit?file=src%2Fapp%2Fapp.component.html
+
+https://stackblitz.com/edit/angular-kdqwoy
+
+https://stackblitz.com/edit/save-cancel-update -->

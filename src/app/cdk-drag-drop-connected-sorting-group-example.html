@@ -1,6 +1,6 @@
 <div cdkDropListGroup>
 	<div class="example-container">
-		<h4>Programming Lang</h4>
+		<h4>{{titleOne}}</h4>
 
 		<div cdkDropList [cdkDropListData]="catagoryOne" class="example-list" (cdkDropListDropped)="drop($event)">
 			<div class="example-box" *ngFor="let item of catagoryOne" cdkDrag>
@@ -10,7 +10,7 @@
 	</div>
 
 	<div class="example-container">
-		<h4>Web FrameWorks</h4>
+		<h4>{{titleTwo}}</h4>
 
 		<div cdkDropList [cdkDropListData]="catagoryTwo" class="example-list" (cdkDropListDropped)="drop($event)">
 			<div class="example-box" *ngFor="let item of catagoryTwo" cdkDrag>
@@ -19,18 +19,18 @@
 		</div>
 	</div>
 
-	<!-- <div class="example-container">
-		<h4>Sports</h4>
+	<div class="example-container">
+		<h4>{{titleThree}}</h4>
 
 		<div cdkDropList [cdkDropListData]="catagoryThree" class="example-list" (cdkDropListDropped)="drop($event)">
 			<div class="example-box" *ngFor="let item of catagoryThree" cdkDrag>
 				{{item}}
 			</div>
 		</div>
-	</div> -->
+	</div>
 
 	<div class="example-container">
-		<h4>Platforms</h4>
+		<h4>{{titleFour}}</h4>
 
 		<div cdkDropList [cdkDropListData]="catagoryFour" class="example-list" (cdkDropListDropped)="drop($event)">
 			<div class="example-box" *ngFor="let item of catagoryFour" cdkDrag>
@@ -40,7 +40,7 @@
 	</div>
 
 	<div class="example-container">
-		<h4>Algorithms</h4>
+		<h4>{{titleFive}}</h4>
 
 		<div cdkDropList [cdkDropListData]="catagoryFive" class="example-list" (cdkDropListDropped)="drop($event)">
 			<div class="example-box" *ngFor="let item of catagoryFive" cdkDrag>
@@ -50,20 +50,10 @@
 	</div>
 
 	<div class="example-container">
-		<h4>Database</h4>
+		<h4>{{titleSix}}</h4>
 
 		<div cdkDropList [cdkDropListData]="catagorySix" class="example-list" (cdkDropListDropped)="drop($event)">
 			<div class="example-box" *ngFor="let item of catagorySix" cdkDrag>
-				{{item}}
-			</div>
-		</div>
-	</div>
-
-	<div class="example-container">
-		<h4>Hated Things</h4>
-
-		<div cdkDropList [cdkDropListData]="catagorySeven" class="example-list" (cdkDropListDropped)="drop($event)">
-			<div class="example-box" *ngFor="let item of catagorySeven" cdkDrag>
 				{{item}}
 			</div>
 		</div>
@@ -87,27 +77,49 @@
 			</div>
 		</div>
 
-		<div class="example-container">
-			<h4>Drag to delete</h4>
+		<div class="new">
+			<div>
+				<input
+        #add
+        type="text"
+        (keyup.enter)="newCatagory(add.value); add.value = ''"
+      />
 
-			<div cdkDropList [cdkDropListData]="deleteItem" class="example-list" (cdkDropListDropped)="drop($event)">
-				<div class="example-box" *ngFor="let item of deleteItem" cdkDrag>
-					{{item}}
+				<button (click)="newCatagory(add.value); add.value = ''">
+        Add new Catagory
+			<div class="example-container">
+				<h4>{{newCat}}</h4>
+
+				<div cdkDropList [cdkDropListData]="newCat" class="example-list"
+					(cdkDropListDropped)="drop($event)">
+					<div class="example-box" *ngFor="let item of newCat" cdkDrag>
+						{{item}}
+					</div>
+				</div>
+			</div>
+
+			<div class="example-container">
+				<h4>Drag to delete</h4>
+
+				<div cdkDropList [cdkDropListData]="deleteItem" class="example-list"
+					(cdkDropListDropped)="drop($event)">
+					<div class="example-box" *ngFor="let item of deleteItem" cdkDrag>
+						{{item}}
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
-<!-- https://stackoverflow.com/questions/60182400/angular-material-drag-n-drop-cdk-remove-element-on-list -->
+	<!-- https://stackoverflow.com/questions/60182400/angular-material-drag-n-drop-cdk-remove-element-on-list -->
 
-<!-- https://stackblitz.com/edit/angular-cdk-nested-drag-drop-tree-structure?file=src%2Fdata.ts -->
+	<!-- https://stackblitz.com/edit/angular-cdk-nested-drag-drop-tree-structure?file=src%2Fdata.ts -->
 
-<!--  https://stackoverflow.com/questions/59153753/angular-8-nested-drag-and-drop -->
-
+	<!--  https://stackoverflow.com/questions/59153753/angular-8-nested-drag-and-drop -->
 
 
-<!-- https://stackblitz.com/edit/angular-inline-edit?file=src%2Fapp%2Fapp.component.html
+
+	<!-- https://stackblitz.com/edit/angular-inline-edit?file=src%2Fapp%2Fapp.component.html
 
 https://stackblitz.com/edit/angular-kdqwoy
 

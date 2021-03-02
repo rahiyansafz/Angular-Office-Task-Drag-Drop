@@ -14,6 +14,13 @@ import {
   styleUrls: ["cdk-drag-drop-connected-sorting-group-example.css"]
 })
 export class CdkDragDropConnectedSortingGroupExample {
+  titleOne = "Programming Lang";
+  titleTwo = "Web FrameWorks";
+  titleThree = "Platforms";
+  titleFour = "Algorithms";
+  titleFive = "Database";
+  titleSix = "Hated Things";
+
   catagoryOne: string[] = ["TypeScript", "Go", "Python", "Rust", "Elixir"];
 
   catagoryTwo: string[] = [
@@ -24,17 +31,9 @@ export class CdkDragDropConnectedSortingGroupExample {
     "Express"
   ];
 
-  catagoryThree: string[] = [
-    "Football",
-    "Cricket",
-    "Tennis",
-    "Billiard",
-    "Basketball"
-  ];
+  catagoryThree: string[] = ["Linux", "Docker", "AWS", "Android", "MacOS"];
 
-  catagoryFour: string[] = ["Linux", "Docker", "AWS", "Android", "MacOS"];
-
-  catagoryFive: string[] = [
+  catagoryFour: string[] = [
     "Graph search",
     "Selection algorithms",
     "Bellman-Ford Algorithm",
@@ -42,7 +41,7 @@ export class CdkDragDropConnectedSortingGroupExample {
     "HeapSort"
   ];
 
-  catagorySix: string[] = [
+  catagoryFive: string[] = [
     "MongoDB",
     "MySQL",
     "PostgreSQL",
@@ -50,11 +49,13 @@ export class CdkDragDropConnectedSortingGroupExample {
     "MariaDB"
   ];
 
-  catagorySeven: string[] = ["PHP", "C", "React", "JQuery", "Windows"];
+  catagorySix: string[] = ["PHP", "C", "React", "JQuery", "Windows"];
 
   catagoryNew: string[] = [];
 
   deleteItem: string[] = [];
+
+  newCat: string[] = []
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {

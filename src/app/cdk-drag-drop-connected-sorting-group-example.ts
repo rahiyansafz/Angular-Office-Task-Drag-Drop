@@ -14,12 +14,20 @@ import {
   styleUrls: ["cdk-drag-drop-connected-sorting-group-example.css"]
 })
 export class CdkDragDropConnectedSortingGroupExample {
-  titleOne = "Programming Lang";
-  titleTwo = "Web FrameWorks";
-  titleThree = "Platforms";
-  titleFour = "Algorithms";
-  titleFive = "Database";
-  titleSix = "Hated Things";
+  titleCat = [
+    "Programming Lang",
+    "Web FrameWorks",
+    "Platforms",
+    "Algorithms",
+    "Database",
+    "Hated Things"
+  ];
+  // titleOne = "Programming Lang";
+  // titleTwo = "Web FrameWorks";
+  // titleThree = "Platforms";
+  // titleFour = "Algorithms";
+  // titleFive = "Database";
+  // titleSix = "Hated Things";
 
   catagoryOne: string[] = ["TypeScript", "Go", "Python", "Rust", "Elixir"];
 
@@ -55,7 +63,7 @@ export class CdkDragDropConnectedSortingGroupExample {
 
   deleteItem: string[] = [];
 
-  newCat: string[] = []
+  newCatagory: string[] = [];
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
@@ -82,5 +90,14 @@ export class CdkDragDropConnectedSortingGroupExample {
     }
     pushed = "";
     console.log("abcd");
+  }
+
+  newCat(add: string): void {
+    add = add.trim();
+    if (add) {
+      this.titleCat.push(add);
+      console.log("asd");
+    }
+    add = "";
   }
 }
